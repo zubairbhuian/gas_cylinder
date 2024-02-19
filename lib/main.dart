@@ -28,7 +28,6 @@ Future<void> main() async {
     statusBarColor: kPrimaryColor,
     statusBarIconBrightness: Brightness.light,
   ));
-
   /// Shared Preferences
   await Preferences.init();
 
@@ -64,7 +63,7 @@ class MyApp extends StatelessWidget {
             apiService: apiService,
           ),
           initialRoute: AppPages.INITIAL,
-          // initialRoute: Routes.SIGN_IN,
+          // initialRoute: Routes.ENTRY_POINT,
           getPages: AppPages.routes,
         );
       }

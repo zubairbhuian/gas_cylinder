@@ -5,7 +5,7 @@ import 'color.dart';
 // ******** Headline **********
 TextStyle kHeadlineLarge = TextStyle(
   color: kTitleColor,
-  fontSize: 54.sp,
+  fontSize: 34.sp,
   fontWeight: FontWeight.w700,
 );
 TextStyle kHeadlineMedium = TextStyle(
