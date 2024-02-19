@@ -9,8 +9,6 @@ import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
 import 'package:gas_cylinder/app/modules/welcome/widgets/custom_animated_smooth_indicator.dart';
 import 'package:gas_cylinder/app/routes/app_pages.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:image_picker/image_picker.dart';
 import '../controllers/welcome_controller.dart';
 
 class WelcomeView extends GetView<WelcomeController> {
@@ -29,6 +27,7 @@ class WelcomeView extends GetView<WelcomeController> {
         body: Stack(
           children: [
             CarouselSlider(
+              carouselController: controller.carouselController,
               items: List.generate(
                 data.length,
                 (index) => Column(
@@ -91,17 +90,16 @@ class WelcomeView extends GetView<WelcomeController> {
                 height: double.infinity,
                 aspectRatio: 16 / 9,
                 viewportFraction: 1,
-                autoPlay: true,
+                initialPage: controller.pageIndex,
+                // autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 3),
                 autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 autoPlayCurve: Curves.easeInOut,
-                enlargeCenterPage: true,
+                // enlargeCenterPage: true,
                 enlargeFactor: 0.25,
                 onPageChanged: (index, carouselPageChangedReason) {
                   controller.pageIndex = index;
                   controller.update();
-                  // controller.slydeIndex = index;
-                  // controller.update();
                 },
                 scrollDirection: Axis.horizontal,
               ),
@@ -123,18 +121,27 @@ class WelcomeView extends GetView<WelcomeController> {
                     SizedBox(
                       height: 16.h,
                     ),
-                    GetBuilder<WelcomeController>(
-                      builder: (controller) {
-                        return ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: kWhite,
-                            foregroundColor: kPrimaryColor,
-                          ),
-                          child: Center(child: Text(controller.pageIndex==2? "Get Started":"Next")),
-                        );
-                      }
-                    )
+                    GetBuilder<WelcomeController>(builder: (controller) {
+                      return ElevatedButton(
+                        onPressed: () {
+                          if (controller.pageIndex == 2) {
+                            Get.offAllNamed(Routes.SIGN_IN);
+                          } else {
+                            controller.pageIndex = controller.pageIndex + 1;
+                            controller.carouselController?.nextPage();
+                            controller.update();
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: kWhite,
+                          foregroundColor: kPrimaryColor,
+                        ),
+                        child: Center(
+                            child: Text(controller.pageIndex == 2
+                                ? "Get Started"
+                                : "Next")),
+                      );
+                    })
                   ],
                 ),
               ),

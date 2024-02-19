@@ -1,8 +1,10 @@
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:gas_cylinder/app/data/models/welcome_data_model.dart';
 import 'package:get/get.dart';
 
 class WelcomeController extends GetxController {
   int pageIndex = 0;
+  final CarouselController carouselController = CarouselController();
   List<WelcomeDataModel> welcomeDataList = [
     WelcomeDataModel(
         img: 'assets/images/welcome/welcome_1.png',

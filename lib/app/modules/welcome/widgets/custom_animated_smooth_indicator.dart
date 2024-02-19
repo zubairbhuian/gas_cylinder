@@ -16,6 +16,7 @@ class CustomAnimatedSmoothIndicator extends StatelessWidget {
       builder: (controller) {
         return Center(
           child: AnimatedSmoothIndicator(
+            
             activeIndex: controller.pageIndex,
             count: 3,
             effect: CustomizableEffect(
