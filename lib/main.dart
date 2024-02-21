@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(414, 932),
       builder: (context,child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
@@ -62,8 +62,8 @@ class MyApp extends StatelessWidget {
           initialBinding: BaseBinding(
             apiService: apiService,
           ),
-          initialRoute: AppPages.INITIAL,
-          // initialRoute: Routes.ENTRY_POINT,
+          // initialRoute: AppPages.INITIAL,
+          initialRoute: Routes.SIGN_UP,
           getPages: AppPages.routes,
         );
       }

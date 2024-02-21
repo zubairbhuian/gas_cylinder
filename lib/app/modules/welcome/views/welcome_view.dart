@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/core/config/style.dart';
-import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
+
 import 'package:gas_cylinder/app/modules/welcome/widgets/custom_animated_smooth_indicator.dart';
 import 'package:gas_cylinder/app/routes/app_pages.dart';
 import 'package:get/get.dart';
@@ -34,7 +34,7 @@ class WelcomeView extends GetView<WelcomeController> {
                   children: [
                     // card
                     Container(
-                      height: 500.h,
+                      height:420.h,
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       decoration: const BoxDecoration(
@@ -113,7 +113,7 @@ class WelcomeView extends GetView<WelcomeController> {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
-                height: 90,
+                height: 130,
                 color: kPrimaryColor,
                 child: Column(
                   children: [
@@ -128,7 +128,7 @@ class WelcomeView extends GetView<WelcomeController> {
                             Get.offAllNamed(Routes.SIGN_IN);
                           } else {
                             controller.pageIndex = controller.pageIndex + 1;
-                            controller.carouselController?.nextPage();
+                            controller.carouselController.nextPage();
                             controller.update();
                           }
                         },
@@ -140,6 +140,18 @@ class WelcomeView extends GetView<WelcomeController> {
                             child: Text(controller.pageIndex == 2
                                 ? "Get Started"
                                 : "Next")),
+                      );
+                    }),
+                    GetBuilder<WelcomeController>(builder: (controller) {
+                      if (controller.pageIndex == 2) {
+                        return const SizedBox.shrink();
+                      }
+                      return TextButton(
+                        onPressed: () {
+                          Get.offAllNamed(Routes.SIGN_IN);
+                        },
+                        style: TextButton.styleFrom(foregroundColor: kWhite),
+                        child: const Text('Skip'),
                       );
                     })
                   ],

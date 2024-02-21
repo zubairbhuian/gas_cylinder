@@ -60,7 +60,7 @@ class PopupDialog {
                   borderRadius: BorderRadius.circular(8),
                   // main body
                   child: const SpinKitFadingCircle(
-                    color: kPrimaryColor, // You can customize the color
+                    color: kSecondaryColor, // You can customize the color
                     size: 43, // You can customize the size
                   ),
                 ),

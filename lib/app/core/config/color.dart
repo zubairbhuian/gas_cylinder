@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 const Color kPrimaryColor = Color(0xff0064C6);
+const Color kSecondaryColor = Color(0xffF37B16);
 const Color kTitleColor = Color(0xff323643);
 const Color kTextColor = Color(0xff000000);
 const Color kTextColorLight = Color(0xff858992);
-
 
 const Color kDisabledColor = Color.fromARGB(255, 211, 211, 211);
 const Color kDisabledTextColor = Color(0xff8A7F85);

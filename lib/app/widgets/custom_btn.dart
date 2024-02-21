@@ -20,7 +20,7 @@ class PrimaryBtn extends StatelessWidget {
   final BorderSide? side;
 
   const PrimaryBtn({
-    Key? key,
+    super.key,
     this.color,
     this.textColor,
     required this.onPressed,
@@ -31,7 +31,7 @@ class PrimaryBtn extends StatelessWidget {
     this.elevation,
     this.padding,
     required this.child, this.side,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
