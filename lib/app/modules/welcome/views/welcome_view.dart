@@ -104,7 +104,7 @@ class WelcomeView extends GetView<WelcomeController> {
                 scrollDirection: Axis.horizontal,
               ),
             ),
-
+            
             // bottom part
             Positioned(
               bottom: 0,

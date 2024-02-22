@@ -57,12 +57,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
+                        color: kDangerColor,
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: kWhite,
-                            width: 2,
+                            color:kDisabledColor,
+                            width: 3,
                           )),
-                      child: Image.asset("assets/images/demo_user.png")),
+                     ),
                 )
               : IconButton(
                   onPressed: () {
@@ -80,7 +81,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       Scaffold.of(context).openDrawer();
                     },
                     icon: SvgPicture.asset(
-                      'assets/icons/home/bars.svg',
+                      'assets/icons/entryPoint/bars.svg',
                       color: fgColor ?? kTextColor,
                     ),
                   ),
