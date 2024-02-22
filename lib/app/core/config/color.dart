@@ -19,7 +19,7 @@ const Color kInfoColor = Color.fromARGB(255, 2, 120, 255);
 const Color kWhite = Colors.white;
 const Color kRed = Colors.red;
 const Color kBlack = Colors.black;
-const Color kYellow = Color(0xffFFCA1E);
+const Color kYellow = Color(0xffFFAE34);
 
 // gradiant color
 // const LinearGradient kBtnGradiantColor = LinearGradient(

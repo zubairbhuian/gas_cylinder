@@ -26,7 +26,7 @@ class AppCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: elevation ?? 4,
+      elevation: elevation ?? 3,
       color: color ?? kWhite,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(

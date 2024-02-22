@@ -28,49 +28,16 @@ class GasBanner extends GetView<GasController> {
               // ? main component
               (index) => Container(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 11),
-                decoration: BoxDecoration(
-                    color: kInfoColor,
-                    gradient: LinearGradient(
-                      colors: [
-                        kPrimaryColor,
-                        kPrimaryColor.withOpacity(.9),
-                      ],
+                decoration:  BoxDecoration(
+                  color: kWhite,
+                    borderRadius: BorderRadius.circular(24)
                     ),
-                    borderRadius: BorderRadius.circular(24)),
-                child: Row(
-                  children: [
-                    //  first
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "50% of the full range of Gas Cylinder",
-                            style: kHeadlineMedium.copyWith(color: kWhite),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          SizedBox(
-                            height: 18.h,
-                          ),
-                          Text(
-                            "Valid Until January 26",
-                            style: kBodyLarge.copyWith(color: kWhite),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-                    ),
-                    //last
-                    Image.asset(
-                      width: 103.w,
-                      'assets/icons/entryPoint/demo_banner.png')
-                  ],
-                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(24),
+                  child: Image.asset(
+                    fit: BoxFit.fill,
+                    'assets/demo_user/gas_banner_1.png'),
+                )
               ),
             ),
             options: CarouselOptions(

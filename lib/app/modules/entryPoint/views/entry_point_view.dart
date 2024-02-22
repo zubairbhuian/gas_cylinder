@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/data/models/base/nav_model.dart';
@@ -11,6 +12,11 @@ class EntryPointView extends GetView<EntryPointController> {
   Widget build(BuildContext context) {
     return GetBuilder<EntryPointController>(builder: (controller) {
       List<NavModel> navData = controller.itemsList;
+      SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: kPrimaryColor,
+        statusBarIconBrightness: Brightness.light,
+      ));
+
       return Scaffold(
           body: IndexedStack(
             index: controller.pageIndex,
@@ -34,8 +40,7 @@ class EntryPointView extends GetView<EntryPointController> {
               // ? Bottom nav bar
               return BottomNavigationBarItem(
                   icon: SvgPicture.asset(navData[index].icon),
-                  activeIcon:
-                      SvgPicture.asset(navData[index].activeIcon),
+                  activeIcon: SvgPicture.asset(navData[index].activeIcon),
                   label: navData[index].label);
             }),
           ));
