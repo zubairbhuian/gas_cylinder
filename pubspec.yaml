@@ -88,6 +88,7 @@ flutter:
     - assets/images/auth/
     - assets/icons/
     - assets/icons/auth/
+    - assets/icons/bottom_nav/ 
 
   fonts:
     - family: Inter

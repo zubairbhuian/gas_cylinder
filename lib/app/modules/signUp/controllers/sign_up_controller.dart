@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gas_cylinder/app/core/utils/logger.dart';
+import 'package:gas_cylinder/app/routes/app_pages.dart';
 import 'package:gas_cylinder/app/widgets/popup_dialogs.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +18,7 @@ class SignUpController extends GetxController {
       PopupDialog.showLoadingDialog();
       Future.delayed(const Duration(seconds: 3), () {
         PopupDialog.closeLoadingDialog();
+        Get.toNamed(Routes.VERIFY_EMAIL);
       });
     } catch (e) {
       kLogger.e('Error from %%%% SIGNUP %%%% => $e');

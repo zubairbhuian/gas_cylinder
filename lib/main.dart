@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
             apiService: apiService,
           ),
           // initialRoute: AppPages.INITIAL,
-          initialRoute: Routes.SIGN_UP,
+          initialRoute: Routes.ENTRY_POINT,
           getPages: AppPages.routes,
         );
       }

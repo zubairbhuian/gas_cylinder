@@ -10,6 +10,11 @@ abstract class Routes {
   static const SIGN_IN = _Paths.SIGN_IN;
   static const FORGET_PASSWORT = _Paths.FORGET_PASSWORT;
   static const ENTRY_POINT = _Paths.ENTRY_POINT;
+  static const VERIFY_EMAIL = _Paths.VERIFY_EMAIL;
+  static const GAS = _Paths.GAS;
+  static const PROFILE = _Paths.PROFILE;
+  static const ORDER = _Paths.ORDER;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
 }
 
 abstract class _Paths {
@@ -19,4 +24,9 @@ abstract class _Paths {
   static const SIGN_IN = '/sign-in';
   static const FORGET_PASSWORT = '/forget-passwort';
   static const ENTRY_POINT = '/entry-point';
+  static const VERIFY_EMAIL = '/verify-email';
+  static const GAS = '/gas';
+  static const PROFILE = '/profile';
+  static const ORDER = '/order';
+  static const NOTIFICATION = '/notification';
 }

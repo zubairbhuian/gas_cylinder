@@ -34,7 +34,7 @@ class WelcomeView extends GetView<WelcomeController> {
                   children: [
                     // card
                     Container(
-                      height:420.h,
+                      height:500.h,
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       decoration: const BoxDecoration(
@@ -65,7 +65,7 @@ class WelcomeView extends GetView<WelcomeController> {
                         children: [
                           Text(
                             data[index].title,
-                            style: kHeadlineLarge.copyWith(color: kWhite),
+                            style: kHeadlineMedium.copyWith(color: kWhite),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
@@ -76,7 +76,7 @@ class WelcomeView extends GetView<WelcomeController> {
                           Text(
                             data[index].subTitle,
                             style: kBodyLarge.copyWith(color: kWhite),
-                            maxLines: 2,
+                            maxLines: 3,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
                           ),
@@ -113,7 +113,7 @@ class WelcomeView extends GetView<WelcomeController> {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
-                height: 130,
+                height: 90,
                 color: kPrimaryColor,
                 child: Column(
                   children: [
@@ -142,18 +142,18 @@ class WelcomeView extends GetView<WelcomeController> {
                                 : "Next")),
                       );
                     }),
-                    GetBuilder<WelcomeController>(builder: (controller) {
-                      if (controller.pageIndex == 2) {
-                        return const SizedBox.shrink();
-                      }
-                      return TextButton(
-                        onPressed: () {
-                          Get.offAllNamed(Routes.SIGN_IN);
-                        },
-                        style: TextButton.styleFrom(foregroundColor: kWhite),
-                        child: const Text('Skip'),
-                      );
-                    })
+                    // GetBuilder<WelcomeController>(builder: (controller) {
+                    //   if (controller.pageIndex == 2) {
+                    //     return const SizedBox.shrink();
+                    //   }
+                    //   return TextButton(
+                    //     onPressed: () {
+                    //       Get.offAllNamed(Routes.SIGN_IN);
+                    //     },
+                    //     style: TextButton.styleFrom(foregroundColor: kWhite),
+                    //     child: const Text('Skip'),
+                    //   );
+                    // })
                   ],
                 ),
               ),
