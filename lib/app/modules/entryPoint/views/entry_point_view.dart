@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
-import 'package:gas_cylinder/app/core/utils/logger.dart';
 import 'package:gas_cylinder/app/data/models/base/nav_model.dart';
 import 'package:get/get.dart';
 import '../controllers/entry_point_controller.dart';

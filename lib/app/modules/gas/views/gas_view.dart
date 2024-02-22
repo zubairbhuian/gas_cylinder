@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../controllers/gas_controller.dart';
 
 class GasView extends GetView<GasController> {
-  const GasView({Key? key}) : super(key: key);
+  const GasView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
