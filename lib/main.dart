@@ -43,7 +43,6 @@ Future<void> main() async {
   /// Add the dio instance to the bindings
   runApp(MyApp(apiService: apiService));
 }
-
 class MyApp extends StatelessWidget {
   final ApiService apiService;
   const MyApp({super.key, required this.apiService});
@@ -62,8 +61,8 @@ class MyApp extends StatelessWidget {
           initialBinding: BaseBinding(
             apiService: apiService,
           ),
-          initialRoute: AppPages.INITIAL,
-          // initialRoute: Routes.ENTRY_POINT,
+          // initialRoute: AppPages.INITIAL,
+          initialRoute: Routes.ENTRY_POINT,
           getPages: AppPages.routes,
         );
       }

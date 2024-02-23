@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gas_cylinder/app/core/config/color.dart';
+import 'package:gas_cylinder/app/modules/order/widgets/order_card.dart';
+import 'package:gas_cylinder/app/widgets/appbar.dart';
 
 import 'package:get/get.dart';
 
@@ -8,18 +11,22 @@ class OrderView extends GetView<OrderController> {
   const OrderView({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('OrderView'),
-          centerTitle: true,
-        ),
-        body: const Center(
-          child: Text(
-            'OrderView is working',
-            style: TextStyle(fontSize: 20),
+        appBar: CustomAppBar(
+          title: Text('Active Order'),
+          fgColor: kWhite,
+          isPrimary: true,
           ),
-        ),
+        body: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 25),
+          child: Column(
+          children: [
+            OrderCard(img: 'assets/images/cylinder_1.png'),
+            OrderCard(img: 'assets/images/cylinder_1.png',),
+
+          ],
+        ),),
       ),
     );
   }

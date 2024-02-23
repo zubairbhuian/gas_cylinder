@@ -1,10 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import '../core/config/color.dart';
 import '../core/config/fonts.dart';
 import '../core/config/style.dart';
-
 
 class PrimaryBtn extends StatelessWidget {
   final Color? color;
@@ -30,7 +31,8 @@ class PrimaryBtn extends StatelessWidget {
     this.width,
     this.elevation,
     this.padding,
-    required this.child, this.side,
+    required this.child,
+    this.side,
   });
 
   @override
@@ -42,24 +44,25 @@ class PrimaryBtn extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          elevation: elevation ?? 1,
-          textStyle: style ?? kLabelLarge.copyWith(color: textColor ?? kWhite),
-          disabledBackgroundColor: kDisabledColor,
-          disabledForegroundColor: kDisabledTextColor,
-          backgroundColor: color ?? kPrimaryColor,
-          foregroundColor: textColor ?? kWhite,
-          padding:
-              padding ?? const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 8),
-          ),
-          // ****** Border color *******
-          side:side
-          // const BorderSide(
-          //   color: kPrimaryColor,
-          //   width: 0,
-          // ),
-        ),
+            elevation: elevation ?? 1,
+            textStyle:
+                style ?? kLabelLarge.copyWith(color: textColor ?? kWhite),
+            disabledBackgroundColor: kDisabledColor,
+            disabledForegroundColor: kDisabledTextColor,
+            backgroundColor: color ?? kPrimaryColor,
+            foregroundColor: textColor ?? kWhite,
+            padding: padding ??
+                const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 8),
+            ),
+            // ****** Border color *******
+            side: side
+            // const BorderSide(
+            //   color: kPrimaryColor,
+            //   width: 0,
+            // ),
+            ),
         child: child,
       ),
     );
@@ -116,6 +119,39 @@ class OutLineBtn extends StatelessWidget {
           ),
           onPressed: onPressed,
           child: child),
+    );
+  }
+}
+
+class ThineBtn extends StatelessWidget {
+  final void Function()? onPressed;
+  final Color? backgroundColor;
+  final String text;
+  final Color? foregroundColor;
+  final TextStyle? style;
+  const ThineBtn(this.text,
+      {super.key,
+      required this.onPressed,
+      this.backgroundColor,
+      this.foregroundColor, this.style});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor ?? kPrimaryColor,
+          foregroundColor: foregroundColor ?? kWhite,
+          shape: RoundedRectangleBorder(
+            borderRadius:
+                BorderRadius.circular(12), // Change the border radius value
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 10)),
+      child: Text(
+        text,
+        style:style??  TextStyle(
+            color:foregroundColor?? kWhite, fontSize: 12, fontWeight: FontWeight.w400),
+      ),
     );
   }
 }
