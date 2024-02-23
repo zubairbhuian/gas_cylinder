@@ -1,23 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SettingsController extends GetxController {
-  //TODO: Implement SettingsController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  final formKey = GlobalKey<FormState>();
+  final oldPassController = TextEditingController();
+  final newPassController = TextEditingController();
+  final newConPassController = TextEditingController();
 }

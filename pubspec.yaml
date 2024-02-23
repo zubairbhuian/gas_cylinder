@@ -85,6 +85,7 @@ flutter:
     - assets/images/welcome/
     - assets/images/auth/
     - assets/icons/
+    - assets/icons/settings/
     - assets/icons/auth/
     - assets/icons/bottom_nav/
     - assets/icons/drawer/
