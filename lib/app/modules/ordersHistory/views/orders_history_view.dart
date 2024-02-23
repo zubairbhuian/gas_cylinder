@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gas_cylinder/app/core/config/color.dart';
+import 'package:gas_cylinder/app/modules/ordersHistory/widgets/orders_history_card.dart';
+import 'package:gas_cylinder/app/widgets/appbar.dart';
 
 import 'package:get/get.dart';
 
@@ -8,16 +11,21 @@ class OrdersHistoryView extends GetView<OrdersHistoryController> {
   const OrdersHistoryView({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('OrdersHistoryView'),
-          centerTitle: true,
+        appBar: CustomAppBar(
+          title: Text('OrdersHistoryView'),
+          isPrimary: true,
+          fgColor: kWhite,
         ),
-        body: const Center(
-          child: Text(
-            'OrdersHistoryView is working',
-            style: TextStyle(fontSize: 20),
+        body: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 25),
+          child: Column(
+            children: [
+              OrdersHistoryCard(),
+              OrdersHistoryCard(),
+
+            ],
           ),
         ),
       ),

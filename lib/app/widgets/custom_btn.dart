@@ -97,17 +97,17 @@ class OutLineBtn extends StatelessWidget {
       child: OutlinedButton(
           style: OutlinedButton.styleFrom(
             padding: padding ??
-                const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-            foregroundColor: foregroundColor ?? kPrimaryColor,
-            side: const BorderSide(width: 1, color: kPrimaryColor),
-            backgroundColor: backgroundColor ?? Colors.transparent,
+                const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+            foregroundColor: foregroundColor ?? const Color(0xffFF5C5F),
+            side:  BorderSide(width: 1, color: const Color(0xffFF5C5F).withOpacity(.4)),
+            backgroundColor: backgroundColor ??kWhite,
             disabledForegroundColor: kWhite,
             disabledBackgroundColor: kDisabledColor,
             textStyle: textStyle ??
                 const TextStyle(
                     color: kRed,
                     fontFamily: Fonts.primary,
-                    fontSize: 18,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500),
             // shape: RoundedRectangleBorder(
             //   borderRadius: BorderRadius.circular(
@@ -134,16 +134,18 @@ class ThineBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return OutlinedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
+      style: OutlinedButton.styleFrom(
+        side:  BorderSide.none,
           backgroundColor: backgroundColor ?? kPrimaryColor,
           foregroundColor: foregroundColor ?? kWhite,
+          
           shape: RoundedRectangleBorder(
             borderRadius:
                 BorderRadius.circular(12), // Change the border radius value
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 10)),
+          padding: const EdgeInsets.symmetric(horizontal: 12)),
       child: Text(
         text,
         style:style??  TextStyle(
