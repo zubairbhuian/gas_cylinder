@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
-import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
 import 'package:get/get.dart';
 
 class CustomDrawerHeader extends StatelessWidget {

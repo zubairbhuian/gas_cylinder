@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
             apiService: apiService,
           ),
           // initialRoute: AppPages.INITIAL,
-          initialRoute: Routes.ENTRY_POINT,
+          initialRoute: Routes.GAS_CYLINDER_SAFETY,
           getPages: AppPages.routes,
         );
       }
