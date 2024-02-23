@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/modules/order/widgets/order_card.dart';
 import 'package:gas_cylinder/app/widgets/appbar.dart';
+import 'package:gas_cylinder/app/widgets/drawer/custom_drawer.dart';
 
 import 'package:get/get.dart';
 
@@ -13,6 +14,7 @@ class OrderView extends GetView<OrderController> {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
+        drawer: CustomDrawer(),
         appBar: CustomAppBar(
           title: Text('Active Order'),
           fgColor: kWhite,

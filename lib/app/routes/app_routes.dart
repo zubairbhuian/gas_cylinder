@@ -15,6 +15,13 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const ORDER = _Paths.ORDER;
   static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const ORDERS_HISTORY = _Paths.ORDERS_HISTORY;
+  static const GAS_CYLINDER_SAFETY = _Paths.GAS_CYLINDER_SAFETY;
+  static const SETTINGS = _Paths.SETTINGS;
+  static const GET_HELP = _Paths.GET_HELP;
+  static const FAQS = _Paths.FAQS;
+  static const PRIVACY_POLICY = _Paths.PRIVACY_POLICY;
+  static const TERMS_ANDCONDITIONS = _Paths.TERMS_ANDCONDITIONS;
 }
 
 abstract class _Paths {
@@ -29,4 +36,11 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const ORDER = '/order';
   static const NOTIFICATION = '/notification';
+  static const ORDERS_HISTORY = '/orders-history';
+  static const GAS_CYLINDER_SAFETY = '/gas-cylinder-safety';
+  static const SETTINGS = '/settings';
+  static const GET_HELP = '/get-help';
+  static const FAQS = '/faqs';
+  static const PRIVACY_POLICY = '/privacy-policy';
+  static const TERMS_ANDCONDITIONS = '/terms-andconditions';
 }

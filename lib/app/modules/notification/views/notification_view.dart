@@ -4,6 +4,7 @@ import 'package:gas_cylinder/app/core/config/style.dart';
 import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
 import 'package:gas_cylinder/app/modules/notification/widgets/notification_card.dart';
 import 'package:gas_cylinder/app/widgets/appbar.dart';
+import 'package:gas_cylinder/app/widgets/drawer/custom_drawer.dart';
 
 import 'package:get/get.dart';
 
@@ -15,6 +16,7 @@ class NotificationView extends GetView<NotificationController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: const CustomDrawer(),
         appBar: const CustomAppBar(
           title: Text('NotificationView'),
           isPrimary: true,

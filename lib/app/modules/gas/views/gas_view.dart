@@ -10,6 +10,7 @@ import 'package:gas_cylinder/app/modules/gas/widgets/custom_search_bar.dart';
 import 'package:gas_cylinder/app/modules/gas/widgets/gas_banner.dart';
 import 'package:gas_cylinder/app/widgets/appbar.dart';
 import 'package:gas_cylinder/app/widgets/card.dart';
+import 'package:gas_cylinder/app/widgets/drawer/custom_drawer.dart';
 
 import 'package:get/get.dart';
 
@@ -21,6 +22,7 @@ class GasView extends GetView<GasController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          drawer: const CustomDrawer(),
           appBar: const CustomAppBar(
             title: Text('Name'),
             bgColor: kPrimaryColor,
