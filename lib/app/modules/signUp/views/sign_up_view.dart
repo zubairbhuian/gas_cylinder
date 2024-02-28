@@ -63,64 +63,55 @@ class SignUpView extends GetView<SignUpController> {
                       child: Column(
                         children: [
                           CustomTextField(
-                            controller: controller.firstNameController,
+                            controller: controller.nameController,
                             keyboardType: TextInputType.name,
-                            extraLabel: 'First name',
-                            hintText: 'Enter first name',
-                            // validator: (value) {
-                            //   if (value == null || value.isEmpty) {
-                            //     return 'Please enter your first name';
-                            //   }
-                            //   return null;
-                            // },
-                          ),
-                          CustomTextField(
-                            controller: controller.lastNameController,
-                            keyboardType: TextInputType.name,
-                            extraLabel: 'Last name',
-                            hintText: 'Enter last name',
-                            // validator: (value) {
-                            //   if (value == null || value.isEmpty) {
-                            //     return 'Please enter last name';
-                            //   }
-                            //   return null;
-                            // },
+                            extraLabel: 'Full name',
+                            hintText: 'Enter full name',
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter last name';
+                              }
+                              return null;
+                            },
                           ),
                           CustomTextField(
                             controller: controller.emailController,
                             keyboardType: TextInputType.emailAddress,
                             extraLabel: 'Email',
                             hintText: 'Email',
-                            // validator: (value) {
-                            //   if (value == null || value.isEmpty) {
-                            //     return 'Please enter your email';
-                            //   }
-                            //   return null;
-                            // },
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your email';
+                              }
+                              return null;
+                            },
                           ),
                           CustomTextField(
                             controller: controller.phoneController,
                             keyboardType: TextInputType.phone,
                             extraLabel: 'Phone number',
                             hintText: 'Enter phone number',
-                            // validator: (value) {
-                            //   if (value == null || value.isEmpty) {
-                            //     return 'Please enter your phone number';
-                            //   }
-                            //   return null;
-                            // },
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your phone number';
+                              } else if (value.length < 11 ||
+                                  value.length > 11) {
+                                return 'number should be 11 digit';
+                              }
+                              return null;
+                            },
                           ),
                           CustomTextField(
                             controller: controller.passwordController,
                             keyboardType: TextInputType.visiblePassword,
                             extraLabel: 'Password',
                             hintText: 'Password',
-                            // validator: (value) {
-                            //   if (value == null || value.isEmpty) {
-                            //     return 'Please enter your password';
-                            //   }
-                            //   return null;
-                            // },
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your password';
+                              }
+                              return null;
+                            },
                           ),
                           15.height,
                           RichText(

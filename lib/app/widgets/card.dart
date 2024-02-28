@@ -27,6 +27,8 @@ class AppCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: elevation ?? 3,
+      surfaceTintColor: kWhite,
+      shadowColor: const Color.fromARGB(105, 215, 215, 215),
       color: color ?? kWhite,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(

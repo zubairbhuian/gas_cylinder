@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_controller.dart';
+import 'package:gas_cylinder/app/core/services/base/preferences.dart';
 import 'package:gas_cylinder/app/data/models/welcome_data_model.dart';
+import 'package:gas_cylinder/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class WelcomeController extends GetxController {
@@ -22,4 +24,15 @@ class WelcomeController extends GetxController {
         subTitle:
             "Enjoy uninterrupted cooking with our easy gas delivery service. Start cooking, not worrying."),
   ];
+
+   goToSignin() {
+    if (pageIndex == 2) {
+      Get.offAllNamed(Routes.SIGN_IN);
+      Preferences.isFirstTime = false;
+    } else {
+      pageIndex = pageIndex + 1;
+      carouselController.nextPage();
+      update();
+    }
+  }
 }

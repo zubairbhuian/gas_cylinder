@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:gas_cylinder/app/core/services/controller/base_controller.dart';
 import 'package:logger/logger.dart';
 
 import 'preferences.dart';
@@ -13,7 +14,7 @@ class DioInterceptor extends Interceptor {
     final token = Preferences.token;
     if (token.isNotEmpty) {
       // options.headers['access-token'] =token;
-      options.headers['Authorization'] = 'Bearer $token';
+      options.headers['Authorization'] = token;
     }
 
     /// set options
@@ -44,6 +45,9 @@ class DioInterceptor extends Interceptor {
       if (token != null && token is String) {
         Preferences.token = token;
       }
+      
+    }else if (response.statusCode == 401) {
+      BaseController.to.logout();
     }
     if (kDebugMode) {
       logger.d('Response: ${response.statusCode} ${response.statusMessage}');

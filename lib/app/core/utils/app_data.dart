@@ -15,10 +15,6 @@ class AppData {
         route: '/settings',
         title: 'Settings'),
     DrawerItemModel(
-        icon: 'assets/icons/drawer/get_help.svg',
-        route: '/get-help',
-        title: 'Get Help'),
-    DrawerItemModel(
         icon: 'assets/icons/drawer/faqs.svg', route: '/faqs', title: 'FAQs'),
     DrawerItemModel(
         icon: 'assets/icons/drawer/privacy_policy.svg',

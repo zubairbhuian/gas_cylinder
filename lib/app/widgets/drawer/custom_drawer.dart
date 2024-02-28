@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
+import 'package:gas_cylinder/app/core/services/controller/base_controller.dart';
 import 'package:gas_cylinder/app/core/utils/app_data.dart';
 import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
 import 'custom_drawer_header.dart';
@@ -16,9 +17,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(0)
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
       backgroundColor: kWhite,
       child: Column(
         children: [
@@ -30,40 +29,47 @@ class CustomDrawer extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                ...List.generate(AppData.drawerItemList.length,(index){
-                  var data =AppData.drawerItemList;
+                ...List.generate(AppData.drawerItemList.length, (index) {
+                  var data = AppData.drawerItemList;
                   return CustomDrawerItem(
                     icon: data[index].icon,
                     title: data[index].title,
                     route: data[index].route,
-                    );
+                  );
                 }),
-
-                 SizedBox(
+                SizedBox(
                   height: 30.h,
                 ),
                 GestureDetector(
-    onTap: () {
-        }, 
-    child: Container(
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Row(
-        children: [
-          Container(
-            width: 48.sp,
-            height: 48.sp,
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [kCardShadow]
-            ),
-            child: SvgPicture.asset('assets/icons/drawer/logout.svg')),
-          10.width,
-          Expanded(child: Text('Logout',style: TextStyle(color: kDangerColor,fontWeight: FontWeight.w500,fontSize: 18.sp),))
-          ],
-      ),
-    ),
-  )
+                  onTap: () {
+                    BaseController.to.logout();
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: Row(
+                      children: [
+                        Container(
+                            width: 48.sp,
+                            height: 48.sp,
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                boxShadow: [kCardShadow]),
+                            child: SvgPicture.asset(
+                                'assets/icons/drawer/logout.svg')),
+                        10.width,
+                        Expanded(
+                            child: Text(
+                          'Logout',
+                          style: TextStyle(
+                              color: kDangerColor,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18.sp),
+                        ))
+                      ],
+                    ),
+                  ),
+                )
               ]),
             ),
           ),

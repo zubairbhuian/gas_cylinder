@@ -34,7 +34,7 @@ class WelcomeView extends GetView<WelcomeController> {
                   children: [
                     // card
                     Container(
-                      height:500.h,
+                      height: 500.h,
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       decoration: const BoxDecoration(
@@ -104,7 +104,7 @@ class WelcomeView extends GetView<WelcomeController> {
                 scrollDirection: Axis.horizontal,
               ),
             ),
-            
+
             // bottom part
             Positioned(
               bottom: 0,
@@ -124,13 +124,7 @@ class WelcomeView extends GetView<WelcomeController> {
                     GetBuilder<WelcomeController>(builder: (controller) {
                       return ElevatedButton(
                         onPressed: () {
-                          if (controller.pageIndex == 2) {
-                            Get.offAllNamed(Routes.SIGN_IN);
-                          } else {
-                            controller.pageIndex = controller.pageIndex + 1;
-                            controller.carouselController.nextPage();
-                            controller.update();
-                          }
+                          controller.goToSignin();
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: kWhite,

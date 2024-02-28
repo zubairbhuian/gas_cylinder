@@ -44,7 +44,7 @@ BoxShadow kbtnShadow = BoxShadow(
   offset: const Offset(1, 4),
   blurRadius: 8,
   spreadRadius: 0,
-  color: const Color(0xff000000).withOpacity(0.2),
+  color: const Color(0xff000000).withOpacity(0.02),
 );
 BoxShadow kbtnShadow2 = BoxShadow(
   offset: const Offset(1, 7),

@@ -56,7 +56,7 @@ class GasView extends GetView<GasController> {
                   decoration: BoxDecoration(
                       color: kWhite,
                       borderRadius: BorderRadius.circular(24),
-                      boxShadow: [kCardShadow]),
+                      boxShadow: [kbtnShadow]),
                   child: Row(
                     children: [
                       Expanded(
@@ -87,6 +87,7 @@ class GasView extends GetView<GasController> {
                         child: AppCard(
                           onTap: () {},
                           color: const Color(0xffFEF2E8),
+                          
                           elevation: 0,
                           child: Column(
                             children: [
@@ -133,7 +134,7 @@ class GasView extends GetView<GasController> {
                         return AppCard(
                           onTap: () {},
                           color: const Color(0xffE5EFF9),
-                          elevation: 5,
+                          elevation: 6,
                           child: Column(
                             children: [
                               Image.asset(

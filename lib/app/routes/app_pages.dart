@@ -1,3 +1,4 @@
+import 'package:gas_cylinder/app/core/middleware/router_welcome.dart';
 import 'package:get/get.dart';
 
 import '../modules/entryPoint/bindings/entry_point_binding.dart';
@@ -49,6 +50,7 @@ class AppPages {
       name: _Paths.WELCOME,
       page: () => const WelcomeView(),
       binding: WelcomeBinding(),
+      middlewares: [RouteWlcomMiddleware()]
     ),
     GetPage(
       name: _Paths.SIGN_UP,

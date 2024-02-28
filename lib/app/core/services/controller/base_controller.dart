@@ -1,15 +1,14 @@
+import 'package:gas_cylinder/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 import '../base/api_service.dart';
 import '../base/preferences.dart';
-
 
 class BaseController extends GetxController {
   static BaseController get to => Get.find();
   final ApiService apiService;
 
   BaseController({required this.apiService});
-
   bool get isFirstTime => Preferences.isFirstTime;
 
   set isFirstTime(bool isFirstTime) => Preferences.isFirstTime = isFirstTime;
@@ -20,6 +19,6 @@ class BaseController extends GetxController {
 
   void logout() {
     Preferences.clear();
-    // Get.offAllNamed(Routes.SIGN_IN);
+    Get.offAllNamed(Routes.SIGN_IN);
   }
 }
