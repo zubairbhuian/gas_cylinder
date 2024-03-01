@@ -17,7 +17,7 @@ class Urls {
   // Gas Banner
   static String gasBanner= '$baseURL/api/v1/gas_banner';
   // Privacy Policy
-  static String privacyPolicy= '$baseURL/api/v1/faqs';
+  static String privacyPolicy= '$baseURL/api/v1/privacy_policy';
   //Terms And Conditions
   static String termsAndConditions= '$baseURL/api/v1/terms_and_conditions'; 
   //Gas Cylinder Safety

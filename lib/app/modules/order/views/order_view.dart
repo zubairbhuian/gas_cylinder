@@ -12,23 +12,43 @@ class OrderView extends GetView<OrderController> {
   const OrderView({super.key});
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return  SafeArea(
       child: Scaffold(
-        drawer: CustomDrawer(),
-        appBar: CustomAppBar(
+        drawer: const CustomDrawer(),
+        appBar: const CustomAppBar(
           title: Text('Active Order'),
           fgColor: kWhite,
           isPrimary: true,
           ),
-        body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 25),
-          child: Column(
-          children: [
-            OrderCard(img: 'assets/images/cylinder_1.png'),
-            OrderCard(img: 'assets/images/cylinder_1.png',),
+        body: RefreshIndicator(
+          onRefresh: () async{
 
-          ],
-        ),),
+            
+          },
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 25),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: MediaQuery.of(context).size.height
+              ),
+              // height: MediaQuery.of(context).size.height,
+              child: const Column(
+              children: [
+                OrderCard(img: 'assets/images/cylinder_1.png'),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                OrderCard(img: 'assets/images/cylinder_1.png',),
+                        
+              ],
+                        ),
+            ),),
+        ),
       ),
     );
   }

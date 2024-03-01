@@ -1,8 +1,10 @@
+import 'package:gas_cylinder/app/core/utils/urls.dart';
+
 class UserModel {
   final String id;
   final String name;
   final String email;
-  final String address;
+  final String addreass;
   final String phone;
   final String photoURL;
 
@@ -10,28 +12,28 @@ class UserModel {
     required this.id,
     required this.name,
     required this.email,
-    required this.address,
+    required this.addreass,
     required this.phone,
     required this.photoURL,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
-      id: json['id'],
+      id: json['_id'],
       name: json['name'],
       email: json['email'],
-      address: json['address'],
+      addreass: json['addreass'],
       phone: json['phone'],
-      photoURL: json['photoURL'],
+      photoURL:'${Urls.baseURL}${json['photoURL']}',
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
+      '_id': id,
       'name': name,
       'email': email,
-      'address': address,
+      'addreass': addreass,
       'phone': phone,
       'photoURL': photoURL,
     };

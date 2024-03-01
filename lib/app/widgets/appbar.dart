@@ -2,6 +2,8 @@
 
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:gas_cylinder/app/modules/profile/controllers/profile_controller.dart';
+import 'package:gas_cylinder/app/widgets/network_img.dart';
 import 'package:get/get.dart';
 
 import '../core/utils/int_extensions.dart';
@@ -33,6 +35,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    var user = ProfileController.to.user;
     return Container(
         decoration: BoxDecoration(
             color: bgColor ?? kPrimaryColor,
@@ -54,16 +57,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           leading: isPrimary == true
               ? Center(
                   child: Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
                         color: kDisabledColor,
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color:kWhite,
-                            width: 3,
-                          )),
-                     ),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: kWhite,
+                          width: 3,
+                        )),
+                    child: NetworkImg(user?.photoURL ?? ''),
+                  ),
                 )
               : IconButton(
                   onPressed: () {

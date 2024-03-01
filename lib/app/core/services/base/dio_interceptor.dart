@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:gas_cylinder/app/core/services/controller/base_controller.dart';
+import 'package:gas_cylinder/app/widgets/popup_dialogs.dart';
 import 'package:logger/logger.dart';
 
 import 'preferences.dart';
@@ -16,7 +17,6 @@ class DioInterceptor extends Interceptor {
       // options.headers['access-token'] =token;
       options.headers['Authorization'] = token;
     }
-
     /// set options
     options.validateStatus = (_) => true;
     options.receiveDataWhenStatusError = true;
@@ -45,9 +45,10 @@ class DioInterceptor extends Interceptor {
       if (token != null && token is String) {
         Preferences.token = token;
       }
-      
-    }else if (response.statusCode == 401) {
+    } else if (response.statusCode == 401) {
       BaseController.to.logout();
+    } else if (response.statusCode == 400) {
+      PopupDialog.showErrorMessage(response.data['Please provide email, and password']);
     }
     if (kDebugMode) {
       logger.d('Response: ${response.statusCode} ${response.statusMessage}');

@@ -9,8 +9,9 @@ class NetworkImg extends StatelessWidget {
   final String? errUrl;
   final double? width;
   final double? height;
+  final BoxFit? fit;
 
-  const NetworkImg(this.url, {super.key, this.errUrl, this.width, this.height});
+  const NetworkImg(this.url, {super.key, this.errUrl, this.width, this.height, this.fit});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +24,15 @@ class NetworkImg extends StatelessWidget {
           Center(child: AppIndecator(value: downloadProgress.progress)),
       errorWidget: (context, url, error) {
         if (errUrl == null) {
-          return const Center(
+          return  const Center(
               child: Icon(
             Icons.error,
-            color: kTextColor,
+            color: kDisabledTextColor,
           ));
         }
         return Image.asset(
           errUrl ?? 'assets/images/default_user.png',
-          fit: BoxFit.fill,
+          fit:fit,
         );
       },
     );

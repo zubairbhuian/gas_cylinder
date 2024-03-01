@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
+import 'package:gas_cylinder/app/modules/profile/controllers/profile_controller.dart';
+import 'package:gas_cylinder/app/widgets/network_img.dart';
 import 'package:get/get.dart';
 
 class CustomDrawerHeader extends StatelessWidget {
@@ -8,6 +10,7 @@ class CustomDrawerHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var user = ProfileController.to.user;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.only(left: 30, top: 30, bottom: 20),
@@ -19,11 +22,12 @@ class CustomDrawerHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 10),
+               Padding(
+                padding: const EdgeInsets.only(top: 10),
                 child: CircleAvatar(
                   radius: 45,
                   backgroundColor: kDisabledColor,
+                  child: NetworkImg(user?.photoURL??''),
                 ),
               ),
               IconButton(
@@ -40,15 +44,15 @@ class CustomDrawerHeader extends StatelessWidget {
             height: 30.h,
           ),
           Text(
-            'Zubair Bhuian',
+            user?.name ?? "User Name",
             style: TextStyle(
                 color: kWhite, fontSize: 24.sp, fontWeight: FontWeight.w700),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          const Text(
-            "demo@gmail.com",
-            style: TextStyle(
+          Text(
+            user?.email ?? "User Email",
+            style: const TextStyle(
               color: kWhite,
               fontSize: 18,
               fontWeight: FontWeight.w400,

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
-import 'package:gas_cylinder/app/widgets/card.dart';
 import 'package:get/get.dart';
 
 class CustomDrawerItem extends StatelessWidget {
@@ -18,7 +16,7 @@ class CustomDrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GestureDetector(
     onTap: () {
-          Get.back();
+          // Get.back();
           Get.toNamed(route);
         }, 
     child: Container(

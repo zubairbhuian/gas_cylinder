@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
-import 'package:gas_cylinder/app/core/config/style.dart';
-import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
+import 'package:gas_cylinder/app/core/config/theme/theme.dart';
+import 'package:gas_cylinder/app/core/utils/logger.dart';
+import 'package:gas_cylinder/app/widgets/app_indecator.dart';
 import 'package:gas_cylinder/app/widgets/appbar.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/terms_andconditions_controller.dart';
+import '../widgets/terms_and_conditions_card.dart';
 
 class TermsAndconditionsView extends GetView<TermsAndconditionsController> {
   const TermsAndconditionsView({super.key});
@@ -18,43 +18,28 @@ class TermsAndconditionsView extends GetView<TermsAndconditionsController> {
           title: Text('Terms & Conditions'),
           fgColor: kWhite,
         ),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-          child: Column(
-            children: [
-              Text(
-                'These Terms Of Services positioned to offer bespoke services at competitive prices without sacrificing. Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus ornare. Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus ornare',
-                style: kBodyMedium.copyWith(color: kTextColorLight),
+        body: GetBuilder<TermsAndconditionsController>(builder: (conreoller) {
+          var data = controller.termsAndConditionList;
+          if (data.isNotEmpty) {
+            return SingleChildScrollView(
+            
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: List.generate(
+                    data.length,
+                    (index) => TermsAndconditionsCard(
+                        title: data[index].title,
+                        description: data[index].description)),
               ),
-              15.height,
-              Text(
-                'Please read the Of Services positioned to offer bespoke services at competitive prices.',
-                style: kBodyMedium.copyWith(color: kTextColorLight),
-              ),
-              15.height,
-              Text(
-                'Applicability & Acceptance of these Terms Of Use.',
-                style: kTitleLarge,
-              ),
-              15.height,
-              Text(
-                'These Terms Of Services positioned to offer bespoke services at competitive prices without sacrificing. Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus ornare. Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus ornare',
-                style: kBodyMedium.copyWith(color: kTextColorLight),
-              ),
-              15.height,
-              Text(
-                'Please read the Of Services positioned to offer bespoke services at competitive prices.',
-                style: kBodyMedium.copyWith(color: kTextColorLight),
-              ),
-              15.height,
-              Text(
-                'These Terms Of Services positioned to offer bespoke services at competitive prices without sacrificing. Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus ornare. Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus ornareƒ',
-                style: kBodyMedium.copyWith(color: kTextColorLight),
-              ),
-            ],
-          ),
-        ),
-     
+            );
+          }
+          return const Center(
+            child: AppIndecator(),
+          );
+        }),
       ),
     );
   }

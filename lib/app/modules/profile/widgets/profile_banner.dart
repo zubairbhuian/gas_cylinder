@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/core/config/style.dart';
+import 'package:gas_cylinder/app/modules/profile/controllers/profile_controller.dart';
+import 'package:gas_cylinder/app/widgets/network_img.dart';
+import 'package:get/get.dart';
 
-class ProfileBanner extends StatelessWidget {
+class ProfileBanner extends GetView<ProfileController> {
   const ProfileBanner({super.key});
 
   @override
@@ -34,8 +37,10 @@ class ProfileBanner extends StatelessWidget {
                     color: kDisabledColor,
                     width: 3,
                   )),
+
               child: Stack(
                 children: [
+                  NetworkImg(controller.user?.photoURL??""),
                   Positioned(
                       left: 0,
                       right: -100,
