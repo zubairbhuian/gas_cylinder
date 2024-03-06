@@ -19,6 +19,7 @@ class ProfileController extends GetxController {
         await BaseController.to.apiService.makeGetRequest(Urls.getUser);
     if (res.statusCode == 200) {
       user = UserModel.fromJson(res.data['data']);
+      
       //
       fullNameController = TextEditingController(text: user?.name);
       emailController = TextEditingController(text: user?.email);

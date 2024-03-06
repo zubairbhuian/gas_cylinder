@@ -2,6 +2,7 @@
 
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:gas_cylinder/app/core/utils/logger.dart';
 import 'package:gas_cylinder/app/modules/profile/controllers/profile_controller.dart';
 import 'package:gas_cylinder/app/widgets/network_img.dart';
 import 'package:get/get.dart';
@@ -35,7 +36,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    var user = ProfileController.to.user;
     return Container(
         decoration: BoxDecoration(
             color: bgColor ?? kPrimaryColor,
@@ -56,18 +56,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           // appbar leading
           leading: isPrimary == true
               ? Center(
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: kWhite,
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: kWhite,
-                          width: 3,
-                        )),
-                    child: NetworkImg(user?.photoURL ?? ''),
-                  ),
+                  child: GetBuilder<ProfileController>(builder: (context) {
+                    var data = context.user;
+                    
+                    if (data != null) {
+                      kLogger.e(data.photoURL);
+                      return Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: kWhite,
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: kWhite,
+                              width: 3,
+                            )),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(800),
+                          child: NetworkImg(data.photoURL)),
+                      );
+                    }
+                    return const SizedBox();
+                  }),
                 )
               : IconButton(
                   onPressed: () {

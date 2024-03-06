@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/core/config/style.dart';
@@ -28,8 +29,6 @@ class ProfileBanner extends GetView<ProfileController> {
             left: 0,
             right: 0,
             child: Container(
-              width: 144.sp,
-              height: 144.sp,
               decoration: BoxDecoration(
                   color: kDisabledColor,
                   shape: BoxShape.circle,
@@ -37,24 +36,24 @@ class ProfileBanner extends GetView<ProfileController> {
                     color: kDisabledColor,
                     width: 3,
                   )),
-
-              child: Stack(
+              child: Column(
                 children: [
-                  NetworkImg(controller.user?.photoURL??""),
-                  Positioned(
-                      left: 0,
-                      right: -100,
-                      bottom: 10,
-                      child: Container(
-                        width: 44,
-                        height: 44,
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.circle, color: kTextColorLight),
-                        child: const Icon(
-                          Icons.camera_alt,
-                          color: kWhite,
-                        ),
-                      ))
+                  ClipRRect(
+                      borderRadius: BorderRadius.circular(800),
+                      child: NetworkImg(
+                          width: 144.sp,
+                          height: 144.sp,
+                          controller.user?.photoURL ?? "")),
+                  // Container(
+                  //   width: 44,
+                  //   height: 44,
+                  //   decoration: const BoxDecoration(
+                  //       shape: BoxShape.circle, color: kTextColorLight),
+                  //   child: const Icon(
+                  //     Icons.camera_alt,
+                  //     color: kWhite,
+                  //   ),
+                  // )
                 ],
               ),
             ),
@@ -67,6 +66,20 @@ class ProfileBanner extends GetView<ProfileController> {
                 child: Text(
                   "Profile",
                   style: kTitleLarge.copyWith(color: kWhite),
+                ),
+              )),
+          Positioned(
+              left: 0,
+              right: -120,
+              bottom: -50,
+              child: Container(
+                width: 42,
+                height: 42,
+                decoration:  BoxDecoration(
+                    shape: BoxShape.circle, color: kTextColorLight.withOpacity(.3)),
+                child: const Icon(
+                  Icons.camera_alt,
+                  color: kWhite,
                 ),
               )),
         ],

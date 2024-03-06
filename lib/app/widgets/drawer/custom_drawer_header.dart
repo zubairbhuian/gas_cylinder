@@ -24,10 +24,19 @@ class CustomDrawerHeader extends StatelessWidget {
             children: [
                Padding(
                 padding: const EdgeInsets.only(top: 10),
-                child: CircleAvatar(
-                  radius: 45,
-                  backgroundColor: kWhite,
-                  child: NetworkImg(user?.photoURL??''),
+                child: Container(
+                  padding: const EdgeInsets.all(2),
+                  decoration: const BoxDecoration(
+                    color: kWhite,
+                    shape: BoxShape.circle
+                  ),
+
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(800),
+                    child: NetworkImg(
+                      fit: BoxFit.cover,
+                      user?.photoURL??''),
+                  ),
                 ),
               ),
               IconButton(
