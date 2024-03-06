@@ -26,7 +26,7 @@ class CustomDrawerHeader extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10),
                 child: CircleAvatar(
                   radius: 45,
-                  backgroundColor: kDisabledColor,
+                  backgroundColor: kWhite,
                   child: NetworkImg(user?.photoURL??''),
                 ),
               ),
