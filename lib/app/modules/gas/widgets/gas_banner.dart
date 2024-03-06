@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
-import 'package:gas_cylinder/app/core/utils/urls.dart';
 import 'package:gas_cylinder/app/data/models/banner_model.dart';
 import 'package:gas_cylinder/app/modules/gas/controllers/gas_controller.dart';
 import 'package:gas_cylinder/app/widgets/network_img.dart';

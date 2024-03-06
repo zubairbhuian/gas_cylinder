@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gas_cylinder/app/core/services/controller/base_controller.dart';
-import 'package:gas_cylinder/app/core/utils/logger.dart';
 import 'package:gas_cylinder/app/core/utils/urls.dart';
 import 'package:gas_cylinder/app/data/models/base/base_model.dart';
 import 'package:gas_cylinder/app/data/models/user_model.dart';

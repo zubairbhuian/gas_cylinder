@@ -5,11 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/core/config/style.dart';
-
-import 'package:gas_cylinder/app/modules/welcome/widgets/custom_animated_smooth_indicator.dart';
-import 'package:gas_cylinder/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 import '../controllers/welcome_controller.dart';
+import '../widgets/custom_animated_smooth_indicator.dart';
 
 class WelcomeView extends GetView<WelcomeController> {
   const WelcomeView({super.key});

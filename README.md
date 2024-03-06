@@ -1,16 +1,29 @@
 # gas_cylinder
 
-A new Flutter project.
+## How to Run This
 
-## Getting Started
+1. **Clone the repository:**
 
-This project is a starting point for a Flutter application.
+    ```
+    git clone https://github.com/zubairbhuian/gas_app_backend.git
+    ```
 
-A few resources to get you started if this is your first Flutter project:
+2. **Navigate to the project directory:**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    ```
+    cd gas_cylinder
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. **Install dependencies:**
+
+    ```
+    flutter pub get
+    ```
+
+4. **Run the app:**
+
+    ```
+    flutter run 
+    ```
+
+   This command will build and run the Flutter app on a connected device or emulator.

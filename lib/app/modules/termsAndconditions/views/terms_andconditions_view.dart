@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
-import 'package:gas_cylinder/app/core/config/theme/theme.dart';
-import 'package:gas_cylinder/app/core/utils/logger.dart';
 import 'package:gas_cylinder/app/widgets/app_indecator.dart';
 import 'package:gas_cylinder/app/widgets/appbar.dart';
 import 'package:get/get.dart';

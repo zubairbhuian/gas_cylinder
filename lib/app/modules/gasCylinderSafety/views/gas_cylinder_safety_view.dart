@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
-import 'package:gas_cylinder/app/core/config/style.dart';
-import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
 import 'package:gas_cylinder/app/modules/gasCylinderSafety/widgets/gas_safety_card.dart';
 import 'package:gas_cylinder/app/widgets/app_indecator.dart';
 import 'package:gas_cylinder/app/widgets/appbar.dart';
