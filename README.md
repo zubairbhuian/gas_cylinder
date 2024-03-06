@@ -1,5 +1,7 @@
 # gas_cylinder
 
+<img src="./assets/gitHub/banner.png" alt="Alt text">
+
 ## How to Run This
 
 1. **Clone the repository:**
