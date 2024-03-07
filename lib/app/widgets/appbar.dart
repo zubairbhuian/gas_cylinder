@@ -60,7 +60,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     var data = context.user;
                     
                     if (data != null) {
-                      kLogger.e(data.photoURL);
                       return Container(
                         width: 50,
                         height: 50,

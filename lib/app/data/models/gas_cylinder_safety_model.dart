@@ -1,3 +1,5 @@
+import '../../core/utils/urls.dart';
+
 class GasCylinderSafetyModel {
   final String id;
   final String title;
@@ -16,7 +18,7 @@ class GasCylinderSafetyModel {
       id: json['_id'],
       title: json['title'],
       description: json['description'],
-      imgURL: json['imgURL'],
+      imgURL:'${Urls.baseURL}${json['imgURL']}',
     );
   }
 

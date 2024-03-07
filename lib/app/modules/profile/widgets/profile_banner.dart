@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/core/config/style.dart';
@@ -40,10 +39,14 @@ class ProfileBanner extends GetView<ProfileController> {
                 children: [
                   ClipRRect(
                       borderRadius: BorderRadius.circular(800),
-                      child: NetworkImg(
-                          width: 144.sp,
-                          height: 144.sp,
-                          controller.user?.photoURL ?? "")),
+                      child: GetBuilder<ProfileController>(
+                        builder: (controller) {
+                          return NetworkImg(
+                              width: 144.sp,
+                              height: 144.sp,
+                              controller.user?.photoURL ?? "");
+                        }
+                      )),
                   // Container(
                   //   width: 44,
                   //   height: 44,

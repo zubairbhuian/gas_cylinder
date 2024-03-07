@@ -1,6 +1,7 @@
 class Urls {
   // common
-  static String baseURL = 'http://10.0.2.2:3000';
+  // static String baseURL = 'http://10.0.2.2:3000';
+  static String baseURL = 'https://gas-app-backend.onrender.com';
   
 
   // auth
