@@ -16,7 +16,7 @@ class CustomDrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GestureDetector(
     onTap: () {
-          // Get.back();
+          Get.back();
           Get.toNamed(route);
         }, 
     child: Container(
