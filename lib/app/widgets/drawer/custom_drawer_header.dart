@@ -34,6 +34,8 @@ class CustomDrawerHeader extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(800),
                     child: NetworkImg(
+                      width: 100.sp,
+                      height: 100.sp,
                       fit: BoxFit.cover,
                       user?.photoURL??''),
                   ),

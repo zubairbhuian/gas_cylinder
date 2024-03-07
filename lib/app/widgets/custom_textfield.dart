@@ -303,7 +303,7 @@ class CustomTextField2 extends StatelessWidget {
             ),
             // ********** inputFormatters ********
             inputFormatters:
-                inputFormatters ?? [LengthLimitingTextInputFormatter(40)],
+                inputFormatters ,
           ),
           // ********** marginBottom ********
           SizedBox(
