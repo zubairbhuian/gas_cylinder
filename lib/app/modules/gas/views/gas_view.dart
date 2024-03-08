@@ -132,22 +132,23 @@ class GasView extends GetView<GasController> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: GetBuilder<GasController>(builder: (controller) {
                       var data = controller.productList;
-                      return StaggeredGrid.count(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 14,
-                          crossAxisSpacing: 14,
-                          children: List.generate(4, (index) {
-                            return ProductCard(
-                              onTap: () {
-                                
-                              },
-                                name: data[index].name,
-                                weight: data[index].weight,
-                                color: data[index].color,
-                                price: data[index].price,
-                                rating: data[index].rating,
-                                img: data[index].img1);
-                          }));
+                      if (data.isNotEmpty) {
+                        return StaggeredGrid.count(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 14,
+                            crossAxisSpacing: 14,
+                            children: List.generate(4, (index) {
+                              return ProductCard(
+                                  onTap: () {},
+                                  name: data[index].name,
+                                  weight: data[index].weight,
+                                  color: data[index].color,
+                                  price: data[index].price,
+                                  rating: data[index].rating,
+                                  img: data[index].img1);
+                            }));
+                      }
+                      return const SizedBox.shrink();
                     }),
                   )
                 ],
