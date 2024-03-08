@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gas_cylinder/app/core/config/color.dart';
 import 'package:gas_cylinder/app/core/config/style.dart';
 import 'package:gas_cylinder/app/core/utils/int_extensions.dart';

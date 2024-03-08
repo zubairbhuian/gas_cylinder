@@ -1,7 +1,7 @@
 class Urls {
   // common
-  static String baseURL = 'http://10.0.2.2:3000';
-  // static String baseURL = 'https://gas-app-backend.onrender.com';
+  // static String baseURL = 'http://10.0.2.2:3000';
+  static String baseURL = 'https://gas-app-backend.onrender.com';
   // auth
   static String signUp = '$baseURL/api/v1/auth/sign_up';
   static String login = '$baseURL/api/v1/auth/login';
