@@ -1,8 +1,7 @@
 class Urls {
   // common
-  // static String baseURL = 'http://10.0.2.2:3000';
-  static String baseURL = 'https://gas-app-backend.onrender.com';
-
+  static String baseURL = 'http://10.0.2.2:3000';
+  // static String baseURL = 'https://gas-app-backend.onrender.com';
   // auth
   static String signUp = '$baseURL/api/v1/auth/sign_up';
   static String login = '$baseURL/api/v1/auth/login';
@@ -24,5 +23,6 @@ class Urls {
   static String gasCylinderSafety = '$baseURL/api/v1/gas_cylinder_safety';
   // Notification
   static String notification = '$baseURL/api/v1/notification';
+  static String product = '$baseURL/api/v1/my_product';
 
 }

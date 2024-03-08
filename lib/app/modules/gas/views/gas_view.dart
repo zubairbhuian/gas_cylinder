@@ -7,6 +7,7 @@ import 'package:gas_cylinder/app/core/config/style.dart';
 import 'package:gas_cylinder/app/core/utils/int_extensions.dart';
 import 'package:gas_cylinder/app/modules/gas/widgets/custom_search_bar.dart';
 import 'package:gas_cylinder/app/modules/gas/widgets/gas_banner.dart';
+import 'package:gas_cylinder/app/modules/gas/widgets/product_card.dart';
 import 'package:gas_cylinder/app/modules/profile/controllers/profile_controller.dart';
 import 'package:gas_cylinder/app/widgets/appbar.dart';
 import 'package:gas_cylinder/app/widgets/card.dart';
@@ -32,7 +33,7 @@ class GasView extends GetView<GasController> {
           ),
           body: RefreshIndicator(
             onRefresh: () async {
-             controller.getBanner();
+              controller.getBanner();
             },
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(vertical: 25),
@@ -130,60 +131,25 @@ class GasView extends GetView<GasController> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: StaggeredGrid.count(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 14,
-                        crossAxisSpacing: 14,
-                        children: List.generate(4, (index) {
-                          return AppCard(
-                            onTap: () {},
-                            color: const Color(0xffE5EFF9),
-                            elevation: 6,
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                    width: 153.w,
-                                    fit: BoxFit.fill,
-                                    'assets/icons/entryPoint/demo_1.png'),
-                                SizedBox(
-                                  height: 18.h,
-                                ),
-                                Text(
-                                  "Gas Cylinder",
-                                  style: kTitleMedium,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                ),
-                                6.height,
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        "11kg | \$35.00",
-                                        style: kLabelSmall,
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        SvgPicture.asset(
-                                            'assets/icons/entryPoint/star.svg'),
-                                        4.width,
-                                        Text(
-                                          "4.9",
-                                          style: kLabelSmall.copyWith(
-                                              color: kYellow),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        })),
+                    child: GetBuilder<GasController>(builder: (controller) {
+                      var data = controller.productList;
+                      return StaggeredGrid.count(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 14,
+                          crossAxisSpacing: 14,
+                          children: List.generate(4, (index) {
+                            return ProductCard(
+                              onTap: () {
+                                
+                              },
+                                name: data[index].name,
+                                weight: data[index].weight,
+                                color: data[index].color,
+                                price: data[index].price,
+                                rating: data[index].rating,
+                                img: data[index].img1);
+                          }));
+                    }),
                   )
                 ],
               ),
