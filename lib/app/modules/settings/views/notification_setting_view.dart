@@ -18,8 +18,8 @@ class NotificationSettingView extends GetView<SettingsController> {
         ),
         body: Center(
           child: Text(
-            'NotificationSettingView is working',
-            style: TextStyle(fontSize: 20),
+            'No data found',
+            style: TextStyle(fontSize: 15,color: kDisabledColor),
           ),
         ),
       ),

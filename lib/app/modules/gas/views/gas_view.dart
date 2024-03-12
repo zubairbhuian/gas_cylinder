@@ -24,7 +24,11 @@ class GasView extends GetView<GasController> {
       child: Scaffold(
           drawer: const CustomDrawer(),
           appBar: CustomAppBar(
-            title: Text(ProfileController.to.user?.name ?? "User name"),
+            title: GetBuilder<ProfileController>(
+              builder: (controller) {
+                return Text(controller.user?.name ?? "User name");
+              }
+            ),
             bgColor: kPrimaryColor,
             fgColor: kWhite,
             isPrimary: true,
